@@ -2,11 +2,15 @@ package zmc.member;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -43,6 +47,29 @@ public class MemberController {
 		List<String> listUser = new ArrayList<String>();
 		listUser.add(firstName);
 		listUser.add(secondName);
+		return listUser;
+	}
+	
+	//4. 响应post方法带参数之/member/name形式
+	@RequestMapping(value="/post/member/name")
+	public List<String> getUserList03(@RequestParam String firstName, @RequestParam String secondName){ 
+		System.out.println("uri");
+		System.out.println(firstName+"*******"+secondName);
+		List<String> listUser = new ArrayList<String>();
+		listUser.add(firstName);
+		listUser.add(secondName);
+		return listUser;
+	}
+	
+	//5. 响应post方法带参数之混合传值url和body一个地方放一点参数。
+	@RequestMapping(value="/postForEntity/member/name")
+	public List<String> getUserList04(@RequestBody Map<String,Object> paraMap, @RequestParam String firstName){ 
+		List<String> listUser = new ArrayList<String>();
+		for(Map.Entry<String, Object> m:paraMap.entrySet()) {
+			listUser.add(m.getValue()+"");
+			System.out.println(m.getValue()+"");
+		}
+		listUser.add(firstName+"");
 		return listUser;
 	}
 	

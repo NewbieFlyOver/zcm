@@ -7,3 +7,9 @@ server:
 spring:
   application:
     name: service-order-feign
+#######################################
+##   feign客户端日志配置 
+#######################################
+logging:
+ level:
+  com.jalja.org.spring.simple.dao.FeignUserClient: DEBUG     

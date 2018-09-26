@@ -11,6 +11,7 @@ public interface OrderService {
 		List<String> getOrderByUserList03();
 		List<String> getOrderByUserList04();
 		List<String> getOrderByUserList05();
-		
+		List<String> getOrderByUserList06();
+		List<String> getOrderByUserList07();
 		
 }

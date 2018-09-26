@@ -1,0 +1,37 @@
+#########################################
+一、 zcm-eureka-server 
+	1. 作为eureka注册中心
+	
+	
+	
+	
+
+#########################################
+二、zcm-eureka-client-member
+	提供会员服务
+
+	1. zmc.member.MemberController类：实现了zcm-eureka-client-order项目中zmc.order包对会员服务的调用
+	2. zmc.member.MemberClientFeignController类：实现了zcm-eureka-feign-client-order项目中zcm.feign.order包对会员服务的调用
+
+
+
+#########################################
+二、zcm-eureka-client-order
+	 提供订单服务集成ribbon，实现负载均衡
+
+	1. zmc.order包 : 实现了对会员服务的调用
+
+
+
+
+
+#########################################
+二、zcm-eureka-feign-client-order
+	提供订单服务集成feign（自带负载均衡）
+	
+	1. zcm.feign.order包: 实现了对会员服务的调用
+
+
+
+
+

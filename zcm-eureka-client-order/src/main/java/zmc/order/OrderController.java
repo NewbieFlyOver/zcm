@@ -50,5 +50,13 @@ public class OrderController {
 		return orderService.getOrderByUserList05();
 	}
 	
-
+	@RequestMapping(value="/order/getOrderByUserList06")
+	public List<String> getOrderByUserList06(){
+		return orderService.getOrderByUserList06();
+	}
+	
+	@RequestMapping(value="/order/getOrderByUserList07")
+	public List<String> getOrderByUserList07(){
+		return orderService.getOrderByUserList07();
+	}
 }
