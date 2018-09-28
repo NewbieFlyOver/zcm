@@ -13,3 +13,18 @@ spring:
 logging:
  level:
   com.jalja.org.spring.simple.dao.FeignUserClient: DEBUG     
+  
+## 开启hystrix
+feign:
+   hystrix: 
+    enabled: true  
+  
+###超时时间
+hystrix:
+   command: 
+     default: 
+       execution: 
+        isolation:
+         thread: 
+          timeoutInMilliseconds: 4000  
+  

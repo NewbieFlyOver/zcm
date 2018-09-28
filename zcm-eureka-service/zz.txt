@@ -20,18 +20,25 @@
 	 提供订单服务集成ribbon，实现负载均衡
 
 	1. zmc.order包 : 实现了对会员服务的调用
-
+	2. zmc.order.hystrix包：在ribbon中使用hystrix,实现服务降级处理访问服务雪崩的情况。
+    3. 配置了Hystrix Dashboard 仪表盘（具体用法看pom文件里的说明）
 
 
 
 
 #########################################
-二、zcm-eureka-feign-client-order
+三、zcm-eureka-feign-client-order
 	提供订单服务集成feign（自带负载均衡）
 	
 	1. zcm.feign.order包: 实现了对会员服务的调用
+	2. zcm.feign.hystrix.order包：在feign中使用hystrix,实现服务降级处理访问服务雪崩的情况。
 
 
 
-
+#########################################
+四、zcm-eureka-zuul
+	Zuul的主要功能是路由转发和过滤器。路由功能是微服务的一部分，比如／api/user转发到到user服务，/api/shop转发到到shop服务。
+	zuul默认和Ribbon结合实现了负载均衡的功能， 类似于nginx转发。
+    
+    1. zcm.zuul包：实现了服务过滤功能。
 

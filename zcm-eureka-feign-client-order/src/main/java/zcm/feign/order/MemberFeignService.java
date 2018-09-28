@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import feign.Param;
 
-@RestController
-@FeignClient("service-member") //生成代理，并注册到Spring容器中,需要调用服务名称
+@FeignClient(value ="service-member") //生成代理，并注册到Spring容器中,需要调用服务名称
 public interface MemberFeignService {
 	
 	/*

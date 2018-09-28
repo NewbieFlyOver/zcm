@@ -4,6 +4,14 @@ eureka:
       defaultZone: http://localhost:8888/eureka/
 server:
   port: 8764
+#### tomcat最大接线程数  
+  tomcat:
+    max-threads: 50
 spring:
   application:
     name: service-order
+
+
+
+
+    

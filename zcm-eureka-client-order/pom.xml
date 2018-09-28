@@ -1,10 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>wmq.fly</groupId>
-  <artifactId>zcm-eureka-client-order</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  
-  <parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>wmq.fly</groupId>
+	<artifactId>zcm-eureka-client-order</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.2.RELEASE</version>
@@ -36,6 +38,31 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-hystrix</artifactId>
+		</dependency>
+		<!-- 引入 Hystrix Dashboard (断路器：Hystrix 仪表盘) 依赖  -->
+		<!-- 官方资料：http://projects.spring.io/spring-cloud/spring-cloud.html#_circuit_breaker_hystrix_dashboard
+		
+						配置方法
+			在启动类上添加@EnableHystrixDashboard
+			浏览器访问：http://localhost:8764/hystrix
+			两个参数的填写：http://localhost:8764/hystrix.stream 
+						   名称自定义即可
+						   
+		   基于ribbon 改造，Feign的改造和这一样。
+		 -->
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+        </dependency>
+		
 	</dependencies>
 
 	<dependencyManagement>

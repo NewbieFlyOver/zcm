@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import feign.Param;
+import zcm.feign.hystrix.order.MemberService;
 
 @RestController
 public class MemberFeignController {
 	
 	@Autowired
 	private MemberFeignService memberFeignService ;
+
 	
 	@RequestMapping(value="/memberFeign/getUserList")
 	public List<String> getUserList(){
@@ -42,5 +44,6 @@ public class MemberFeignController {
 		
 		return memberFeignService.getUserList05(member);
 	}
-
+	
+	
 }
